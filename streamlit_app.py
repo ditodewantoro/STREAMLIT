@@ -1,6 +1,8 @@
 import pandas as pd
 import pickle
 import streamlit as st
+import numpy as np
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 # Load pipeline model (menggunakan pickle)
 with open("obesity_pipeline_model.pkl", "rb") as f:
