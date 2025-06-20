@@ -1,9 +1,10 @@
 import pandas as pd
-import joblib
+import pickle
 import streamlit as st
 
-# Load pipeline model (sudah termasuk scaler, encoder, classifier)
-model = joblib.load("obesity_pipeline_model.pkl")
+# Load pipeline model (menggunakan pickle)
+with open("obesity_pipeline_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # Pilihan kategori sesuai data latih
 gender_options = ['Male', 'Female', 'Other']
@@ -76,4 +77,4 @@ with st.form("input_form"):
 
 # Footer
 st.markdown("---")
-st.markdown("#### TERIMAKASIH")
+st.markdown("#### Aplikasi ini menggunakan model pipeline klasifikasi obesitas berdasarkan data WHO.")
